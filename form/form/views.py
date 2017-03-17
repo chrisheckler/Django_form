@@ -1,4 +1,6 @@
-from collection.forms import ContactForm
+from django.shortcuts import render
+from django import forms
+
 
 def contact(request):
     form_class = ContactForm
