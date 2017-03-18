@@ -1,9 +1,10 @@
 from django import forms
+from .models import Person
 
-class ContactForm(forms.Form):
-    contact_name = forms.CharField(required=True)
-    contact_email = forms.EmailField(required=True)
-    content = forms.CharField(
-        required=True,
-        widget=forms.Textarea
-    )
+
+class PersonForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Person
+        fields = ('contact_name', 'contact_email')
